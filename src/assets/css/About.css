@@ -1,0 +1,398 @@
+/* About Page Styles */
+
+/* Header Section */
+.about-header {
+  height: 350px;
+  background-image: url('https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white-color);
+  margin-top: 0;
+}
+
+.about-header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.header-content {
+  max-width: 800px;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.header-content h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+.header-content p {
+  font-size: 18px;
+}
+
+/* Company Overview */
+.company-overview {
+  padding: 90px 0;
+}
+
+.company-overview h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: var(--primary-color);
+}
+
+.company-overview p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--gray-color);
+  margin-bottom: 20px;
+}
+
+.company-image {
+  height: 400px;
+  background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80');
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Core Values */
+.core-values {
+  padding: 90px 0;
+  background-color: var(--light-color);
+}
+
+.values-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.value-card {
+  background-color: var(--white-color);
+  padding: 40px 30px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.value-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.value-icon {
+  font-size: 40px;
+  color: var(--accent-color);
+  margin-bottom: 20px;
+}
+
+.value-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--primary-color);
+}
+
+.value-card p {
+  font-size: 14px;
+  color: var(--gray-color);
+}
+
+/* Leadership Team */
+.leadership-team {
+  padding: 90px 0;
+}
+
+.team-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.team-member {
+  background-color: var(--white-color);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.team-member:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.member-image {
+  height: 280px;
+  background-size: cover;
+  background-position: center top;
+}
+
+.member-1 {
+  background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80');
+}
+
+.member-2 {
+  background-image: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80');
+}
+
+.member-3 {
+  background-image: url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80');
+}
+
+.team-member h3 {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 20px 20px 5px;
+  color: var(--primary-color);
+}
+
+.member-title {
+  font-size: 14px;
+  color: var(--accent-color);
+  font-weight: 600;
+  padding: 0 20px 10px;
+}
+
+.team-member p {
+  font-size: 14px;
+  color: var(--gray-color);
+  padding: 0 20px 20px;
+}
+
+/* Milestones */
+.milestones {
+  padding: 90px 0;
+  background-color: var(--light-color);
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  background-color: var(--accent-color);
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 60px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.timeline-content {
+  position: relative;
+  width: 45%;
+  background-color: var(--white-color);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+  left: 55%;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  left: 0;
+}
+
+.timeline-content h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.timeline-content p {
+  font-size: 14px;
+  color: var(--gray-color);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .about-header {
+    height: 300px;
+  }
+  
+  .company-overview,
+  .core-values,
+  .leadership-team,
+  .milestones {
+    padding: 70px 0;
+  }
+  
+  .company-overview h2 {
+    font-size: 28px;
+  }
+  
+  .company-image {
+    height: 350px;
+  }
+  
+  .timeline::before {
+    left: 30px;
+  }
+  
+  .timeline-dot {
+    left: 30px;
+  }
+  
+  .timeline-content {
+    width: calc(100% - 80px);
+    margin-left: 80px;
+  }
+  
+  .timeline-item:nth-child(odd) .timeline-content,
+  .timeline-item:nth-child(even) .timeline-content {
+    left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-header {
+    height: 250px;
+  }
+  
+  .header-content h1 {
+    font-size: 32px;
+  }
+  
+  .company-overview,
+  .core-values,
+  .leadership-team,
+  .milestones {
+    padding: 60px 0;
+  }
+  
+  .company-overview h2 {
+    font-size: 26px;
+  }
+  
+  .company-overview p {
+    font-size: 15px;
+  }
+  
+  .company-image {
+    height: 300px;
+    margin-top: 20px;
+  }
+  
+  .value-card {
+    padding: 30px 25px;
+  }
+  
+  .value-icon {
+    font-size: 35px;
+  }
+  
+  .member-image {
+    height: 250px;
+  }
+  
+  .timeline-item {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-header {
+    height: 200px;
+  }
+  
+  .header-content h1 {
+    font-size: 26px;
+  }
+  
+  .company-overview,
+  .core-values,
+  .leadership-team,
+  .milestones {
+    padding: 50px 0;
+  }
+  
+  .company-overview h2 {
+    font-size: 24px;
+  }
+  
+  .company-overview p {
+    font-size: 14px;
+  }
+  
+  .company-image {
+    height: 250px;
+  }
+  
+  .value-icon {
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+  
+  .value-card h3,
+  .team-member h3,
+  .timeline-content h3 {
+    font-size: 18px;
+  }
+  
+  .member-image {
+    height: 220px;
+  }
+  
+  .timeline-dot {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .timeline-content {
+    padding: 15px;
+  }
+} 
