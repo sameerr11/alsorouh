@@ -71,12 +71,20 @@
   align-items: flex-start;
   margin-bottom: 15px;
   font-size: 14px;
+  line-height: 1.5;
 }
 
 .footer-contact li svg {
   color: var(--accent-color);
   margin-right: 10px;
   margin-top: 3px;
+  min-width: 16px;
+  font-size: 16px;
+}
+
+.footer-contact li span {
+  flex: 1;
+  word-break: break-word;
 }
 
 .social-links {

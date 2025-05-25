@@ -30,10 +30,6 @@ function Navbar() {
     setIsMobileMenuOpen(false);
   }, [location]);
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
   // Prevent scrolling when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
@@ -46,6 +42,10 @@ function Navbar() {
       document.body.style.overflow = 'auto';
     };
   }, [isMobileMenuOpen]);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
 
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
@@ -108,17 +108,8 @@ function Navbar() {
       {/* Overlay for mobile menu */}
       {isMobileMenuOpen && (
         <div 
-          className="menu-overlay" 
+          className={`menu-overlay ${isMobileMenuOpen ? 'active' : ''}`}
           onClick={toggleMobileMenu}
-          style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            backgroundColor: 'rgba(0, 0, 0, 0.7)',
-            zIndex: 998
-          }}
         />
       )}
     </header>

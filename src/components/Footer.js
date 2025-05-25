@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../assets/css/Footer.css';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaClock, FaUser } from 'react-icons/fa';
 
 function Footer() {
   return (
@@ -51,16 +51,24 @@ function Footer() {
             <h3>Contact Us</h3>
             <ul className="footer-contact">
               <li>
+                <FaUser />
+                <span>Mohammed Suleiman Ali Zraki</span>
+              </li>
+              <li>
                 <FaMapMarkerAlt />
-                <span>123 Business Avenue, Dubai, UAE</span>
+                <span>Jeddah, Kingdom of Saudi Arabia</span>
               </li>
               <li>
                 <FaPhone />
-                <span>+971 4 123 4567</span>
+                <span>+966 56 890 4704</span>
               </li>
               <li>
                 <FaEnvelope />
-                <span>info@alsorouhgroup.com</span>
+                <span>zreaqy@gmail.com</span>
+              </li>
+              <li>
+                <FaClock />
+                <span>Sun-Thu: 8:00 AM - 6:00 PM</span>
               </li>
             </ul>
           </div>

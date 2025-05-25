@@ -533,6 +533,13 @@
 }
 
 /* Responsive Styles */
+@media (max-width: 1200px) {
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+  }
+}
+
 @media (max-width: 992px) {
   .services-header {
     height: 400px;
@@ -571,6 +578,7 @@
   
   .cta-content {
     padding: 50px 35px;
+    max-width: 90%;
   }
   
   .cta-content h2 {
@@ -630,7 +638,7 @@
   }
   
   .cta-content {
-    max-width: 600px;
+    max-width: 90%;
     padding: 40px 30px;
   }
   
@@ -650,6 +658,54 @@
     font-size: 16px;
     width: auto;
     min-width: 220px;
+  }
+  
+  .service-card, 
+  .process-step {
+    transform: none !important;
+  }
+  
+  .service-card:hover, 
+  .process-step:hover {
+    transform: translateY(-5px) !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .services-header {
+    height: 300px;
+  }
+  
+  .header-content h1 {
+    font-size: 34px;
+  }
+  
+  .service-description {
+    padding: 60px 0;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .service-card {
+    padding: 30px 25px;
+    margin: 0 15px;
+  }
+  
+  .service-icon {
+    font-size: 40px;
+  }
+  
+  .service-card h3 {
+    font-size: 20px;
+  }
+  
+  .section-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+    padding: 0 15px;
   }
 }
 
@@ -680,63 +736,70 @@
   .description-content p {
     font-size: 16px;
     line-height: 1.6;
+    padding: 0 15px;
   }
   
   .section-title {
-    font-size: 28px;
-    margin-bottom: 35px;
-    padding-bottom: 15px;
+    font-size: 26px;
+    margin-bottom: 30px;
+    padding: 0 15px;
   }
   
   .main-services,
   .additional-services,
   .fire-services {
-    padding: 60px 0;
+    padding: 50px 0;
   }
   
   .service-icon {
-    font-size: 40px;
-    margin-bottom: 20px;
+    font-size: 35px;
+    margin-bottom: 15px;
   }
   
   .service-card h3 {
-    font-size: 20px;
-    margin-bottom: 15px;
+    font-size: 18px;
+    margin-bottom: 10px;
     padding-bottom: 10px;
   }
   
-  .service-card {
-    padding: 30px 20px;
+  .service-card p {
+    font-size: 14px;
   }
   
-  .service-card:hover {
-    transform: translateY(-10px);
+  .service-card {
+    padding: 25px 20px;
+    margin: 0 15px;
+  }
+  
+  .service-btn {
+    padding: 8px 20px;
+    font-size: 13px;
   }
   
   .services-cta {
-    padding: 80px 0;
+    padding: 60px 0;
   }
   
   .cta-content {
-    padding: 35px 20px;
+    padding: 30px 20px;
     max-width: 90%;
   }
   
   .cta-content h2 {
-    font-size: 24px;
+    font-size: 22px;
     margin-bottom: 15px;
   }
   
   .cta-content p {
-    font-size: 16px;
-    margin-bottom: 25px;
+    font-size: 14px;
+    margin-bottom: 20px;
     line-height: 1.5;
   }
   
   .cta-content .cta-button {
-    padding: 14px 30px;
+    padding: 12px 25px;
     font-size: 14px;
     width: 100%;
-    max-width: 250px;
+    max-width: 200px;
   }
 } 

@@ -9,6 +9,7 @@
   --white-color: #ffffff;
   --header-height: 90px;
   --navbar-height: 90px;
+  --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 * {
@@ -17,12 +18,17 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   color: var(--dark-color);
-  width: 100vw;
+  width: 100%;
   overflow-x: hidden;
+  position: relative;
 }
 
 a {
@@ -32,6 +38,11 @@ a {
 
 ul {
   list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 .container {
@@ -75,7 +86,7 @@ ul {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
   overflow-x: hidden;
 }
 
@@ -117,7 +128,7 @@ ul {
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: var(--transition);
   text-align: center;
 }
 
@@ -150,6 +161,7 @@ ul {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
+  z-index: 0;
 }
 
 .header-content {
@@ -171,9 +183,21 @@ ul {
 }
 
 /* Responsive Styles */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 100%;
+    padding: 0 25px;
+  }
+}
+
 @media (max-width: 992px) {
   :root {
-    --header-height: 100px;
+    --header-height: 80px;
+    --navbar-height: 80px;
+  }
+  
+  .container {
+    padding: 0 20px;
   }
   
   .col-md-2, .col-md-3, .col-md-4 {
@@ -184,11 +208,22 @@ ul {
   .section-title {
     font-size: 28px;
   }
+  
+  .about-header,
+  .services-header,
+  .contact-header {
+    height: 350px;
+  }
 }
 
 @media (max-width: 768px) {
   :root {
-    --header-height: 80px;
+    --header-height: 70px;
+    --navbar-height: 70px;
+  }
+  
+  .container {
+    padding: 0 15px;
   }
   
   .col-md-2, .col-md-3, .col-md-4, .col-md-6, .col-lg-6 {
@@ -208,9 +243,37 @@ ul {
     padding: 10px 25px;
     font-size: 15px;
   }
+  
+  .about-header,
+  .services-header,
+  .contact-header {
+    height: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    padding: 0 10px;
+  }
+  
+  .about-header,
+  .services-header,
+  .contact-header {
+    height: 250px;
+  }
+  
+  .header-content {
+    width: 100%;
+    padding: 0 15px;
+  }
 }
 
 @media (max-width: 480px) {
+  :root {
+    --header-height: 60px;
+    --navbar-height: 60px;
+  }
+  
   .header-content h1 {
     font-size: 28px;
   }
@@ -218,5 +281,13 @@ ul {
   .section-title {
     font-size: 24px;
     margin-bottom: 30px;
+  }
+  
+  .row {
+    margin: -10px;
+  }
+  
+  .col-md-6, .col-md-4, .col-md-3, .col-md-2, .col-lg-6 {
+    padding: 10px;
   }
 }
