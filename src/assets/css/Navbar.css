@@ -12,17 +12,19 @@ body {
   left: 0;
   width: 100vw; /* Use viewport width to ensure full width coverage */
   z-index: 1000;
-  transition: all 0.3s ease;
-  background-color: #1a1a1a; /* Darker background for more depth */
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.8); /* Strong shadow for depth */
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  background-color: rgba(26, 26, 26, 0.9); /* Semi-transparent background */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2); /* Refined shadow */
 }
 
 .navbar {
-  background: linear-gradient(to right, #1a1a1a, #292929, #1a1a1a); /* Subtle gradient */
+  background: linear-gradient(to right, rgba(26, 26, 26, 0.9), rgba(41, 41, 41, 0.9), rgba(26, 26, 26, 0.9));
   padding: 25px 0;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   width: 100%;
-  border-bottom: 1px solid rgba(189, 167, 125, 0.2); /* Subtle gold accent line */
+  border-bottom: 1px solid rgba(255, 193, 7, 0.2); /* Gold accent line using accent color */
 }
 
 .navbar-content {
@@ -38,15 +40,21 @@ body {
   text-decoration: none;
   display: flex;
   align-items: center;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
   margin-right: 60px;
   text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3); /* Text shadow for depth */
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.logo:hover {
+  transform: translateY(-2px);
+  text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 .logo img {
   height: 45px;
   margin-right: 12px;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .header.scrolled .logo img {
@@ -69,35 +77,45 @@ body {
   padding: 0;
 }
 
+.nav-links li {
+  position: relative;
+  overflow: hidden;
+}
+
 .nav-links li a {
   font-weight: 500;
   color: var(--white-color);
   position: relative;
-  transition: all 0.3s ease;
-  padding: 5px 0;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  padding: 8px 0;
   font-size: 17px;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
+  display: inline-block;
 }
 
 .nav-links li a::after {
   content: '';
   position: absolute;
-  bottom: -5px;
+  bottom: 0;
   left: 0;
-  width: 0;
+  width: 100%;
   height: 2px;
   background: linear-gradient(to right, var(--accent-color), #d4c193); /* Gradient underline */
-  transition: width 0.3s ease;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .nav-links li a:hover, 
 .nav-links li a.active {
   color: var(--accent-color);
+  transform: translateY(-3px);
 }
 
 .nav-links li a:hover::after,
 .nav-links li a.active::after {
-  width: 100%;
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 .nav-cta {
@@ -105,24 +123,46 @@ body {
 }
 
 .nav-cta .cta-button {
-  padding: 14px 32px;
+  padding: 12px 28px;
   font-size: 16px;
   background: linear-gradient(to right, var(--accent-color), #d4c193); /* Gradient button */
-  color: var(--white-color);
-  border-radius: 4px;
-  transition: all 0.3s ease;
+  color: #212529;
+  border-radius: 50px;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   border: 2px solid var(--accent-color);
-  letter-spacing: 0.8px;
-  font-weight: 600;
+  letter-spacing: 1px;
+  font-weight: 700;
   text-transform: uppercase;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Button shadow */
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.nav-cta .cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  transform: translateX(-100%);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  z-index: -1;
 }
 
 .nav-cta .cta-button:hover {
-  background: transparent;
   color: var(--accent-color);
   transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(189, 167, 125, 0.4);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  border-color: #ffffff;
+}
+
+.nav-cta .cta-button:hover::before {
+  transform: translateX(0);
 }
 
 .mobile-toggle {
@@ -130,12 +170,18 @@ body {
   font-size: 24px;
   cursor: pointer;
   color: var(--white-color);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.mobile-toggle:hover {
+  color: var(--accent-color);
+  transform: scale(1.1);
 }
 
 /* Scrolled Header Styles */
 .header.scrolled .navbar {
   padding: 18px 0;
-  background: linear-gradient(to right, #1a1a1a, #232323, #1a1a1a);
+  background: linear-gradient(to right, rgba(15, 15, 15, 0.95), rgba(25, 25, 25, 0.95), rgba(15, 15, 15, 0.95));
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
