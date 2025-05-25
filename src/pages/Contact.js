@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../assets/css/Contact.css';
-import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock, FaBuilding, FaUser, FaLocationArrow, FaCity } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock, FaBuilding, FaUser } from 'react-icons/fa';
 import 'leaflet/dist/leaflet.css';
 
 function Contact() {
@@ -66,7 +66,7 @@ function Contact() {
         center={position} 
         zoom={13} 
         scrollWheelZoom={false} 
-        style={{ height: '450px', width: '100%', borderRadius: '0' }}
+        style={{ height: '400px', width: '100%', borderRadius: '8px' }}
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
@@ -227,24 +227,12 @@ function Contact() {
       {/* Find Us Map Section */}
       <section className="map-section">
         <div className="container">
-          <div className="map-header">
-            <h2 className="section-title">FIND US</h2>
-            <p className="section-subtitle">Our office is located in Jeddah, Saudi Arabia, easily accessible and ready to welcome you.</p>
-          </div>
-          <div className="map-container-wrapper">
-            <div className="map-container">
-              {mapReady && <MapComponent />}
-              <div className="map-overlay">
-                <div className="map-overlay-title">
-                  <FaLocationArrow /> AL SOROUH GROUP
-                </div>
-                <div className="map-overlay-info">
-                  Jeddah, Kingdom of Saudi Arabia
-                </div>
-              </div>
-              <div className="map-disclaimer">
-                Hold Ctrl+Scroll to zoom the map
-              </div>
+          <h2 className="section-title find-us-title">Find Us</h2>
+          <div className="find-us-divider"></div>
+          <div className="map-container">
+            {mapReady && <MapComponent />}
+            <div className="map-disclaimer">
+              Hold Ctrl+Scroll to zoom the map
             </div>
           </div>
         </div>
@@ -253,17 +241,17 @@ function Contact() {
       {/* Office Locations */}
       <section className="office-locations">
         <div className="container">
-          <h2 className="section-title">OUR OFFICE</h2>
+          <div className="offices-title-wrapper">
+            <h2 className="section-title">Our Office</h2>
+            <div className="offices-divider"></div>
+            <p className="office-subtitle">Visit us at our office or contact us directly through phone or email. We're always ready to assist you.</p>
+          </div>
           <div className="offices-grid">
             <div className="office-card">
-              <div className="office-header">
-                <h3><FaCity /> Jeddah Office</h3>
-              </div>
-              <div className="office-body">
-                <p><FaMapMarkerAlt /> Jeddah, Kingdom of Saudi Arabia</p>
-                <p><FaPhone /> +966 56 890 4704</p>
-                <p><FaEnvelope /> zreaqy@gmail.com</p>
-              </div>
+              <h3>Jeddah Office</h3>
+              <p><FaMapMarkerAlt /> Jeddah, Kingdom of Saudi Arabia</p>
+              <p><FaPhone /> +966 56 890 4704</p>
+              <p><FaEnvelope /> zreaqy@gmail.com</p>
             </div>
           </div>
         </div>

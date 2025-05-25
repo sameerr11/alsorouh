@@ -8,8 +8,10 @@
 
 :root {
   --primary-color: #000000;
+  --primary-color-rgb: 0, 0, 0;
   --secondary-color: #746f65;
   --accent-color: #bda77d;
+  --accent-color-rgb: 189, 167, 125;
   --light-color: #f4f4f4;
   --dark-color: #333333;
   --gray-color: #6c757d;
