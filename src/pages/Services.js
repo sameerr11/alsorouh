@@ -1,6 +1,7 @@
 import React from 'react';
 import '../assets/css/Services.css';
 import { FaTools, FaWrench, FaLightbulb, FaWater, FaHandshake, FaHome, FaBuilding, FaIndustry, FaFireExtinguisher, FaBell, FaClipboardCheck } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 function Services() {
   return (
@@ -139,7 +140,7 @@ function Services() {
           <div className="cta-content">
             <h2>Need Professional Construction or MEP Services?</h2>
             <p>Contact us to discuss your project requirements. We offer customized solutions for all your construction and MEP needs.</p>
-            <button className="cta-button">Request a Quote</button>
+            <Link to="/contact" className="cta-button">REQUEST A QUOTE</Link>
           </div>
         </div>
       </section>
