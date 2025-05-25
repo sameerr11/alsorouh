@@ -1,8 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../assets/css/Contact.css';
-import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock, FaBuilding } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock, FaBuilding, FaUser, FaLocationArrow, FaCity } from 'react-icons/fa';
+import 'leaflet/dist/leaflet.css';
 
 function Contact() {
+  // Jeddah coordinates (approximated)
+  const position = [21.5433, 39.1728]; // Latitude, Longitude for Jeddah
+  const [mapReady, setMapReady] = useState(false);
+  
+  useEffect(() => {
+    // Dynamic import of Leaflet components to avoid SSR issues
+    setMapReady(true);
+  }, []);
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -33,6 +43,47 @@ function Contact() {
     });
   };
 
+  // Map Component to be loaded client-side only
+  const MapComponent = () => {
+    if (typeof window === 'undefined') return null;
+    
+    const { MapContainer, TileLayer, Marker, Popup } = require('react-leaflet');
+    const L = require('leaflet');
+    
+    // Custom marker icon
+    const customIcon = new L.Icon({
+      iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
+      iconRetinaUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png',
+      iconSize: [25, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+      shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
+      shadowSize: [41, 41]
+    });
+    
+    return (
+      <MapContainer 
+        center={position} 
+        zoom={13} 
+        scrollWheelZoom={false} 
+        style={{ height: '450px', width: '100%', borderRadius: '0' }}
+      >
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+          url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
+        />
+        <Marker position={position} icon={customIcon}>
+          <Popup>
+            <div className="map-popup">
+              <strong>AL SOROUH GROUP</strong><br />
+              Jeddah, Kingdom of Saudi Arabia
+            </div>
+          </Popup>
+        </Marker>
+      </MapContainer>
+    );
+  };
+
   return (
     <div className="contact-container">
       {/* Header Section */}
@@ -55,10 +106,18 @@ function Contact() {
                 
                 <div className="info-items">
                   <div className="info-item">
+                    <FaUser className="info-icon" />
+                    <div className="info-text">
+                      <h3>Owner / Contact Person</h3>
+                      <p>Mohammed Suleiman Ali Zraki</p>
+                    </div>
+                  </div>
+                  
+                  <div className="info-item">
                     <FaMapMarkerAlt className="info-icon" />
                     <div className="info-text">
                       <h3>Visit Us</h3>
-                      <p>123 Construction Avenue, Business District<br />Dubai, United Arab Emirates</p>
+                      <p>Jeddah, Kingdom of Saudi Arabia</p>
                     </div>
                   </div>
                   
@@ -66,7 +125,7 @@ function Contact() {
                     <FaPhone className="info-icon" />
                     <div className="info-text">
                       <h3>Call Us</h3>
-                      <p>+971 4 123 4567<br />+971 50 987 6543</p>
+                      <p>+966 56 890 4704</p>
                     </div>
                   </div>
                   
@@ -74,7 +133,7 @@ function Contact() {
                     <FaEnvelope className="info-icon" />
                     <div className="info-text">
                       <h3>Email Us</h3>
-                      <p>info@alsorouhgroup.com<br />projects@alsorouhgroup.com</p>
+                      <p>zreaqy@gmail.com</p>
                     </div>
                   </div>
                   
@@ -165,15 +224,27 @@ function Contact() {
         </div>
       </section>
 
-      {/* Map Section */}
+      {/* Find Us Map Section */}
       <section className="map-section">
         <div className="container">
-          <h2 className="section-title">Our Location</h2>
-          <div className="map-container">
-            {/* In a real application, you would embed a Google Map or similar here */}
-            <div className="map-placeholder">
-              <FaBuilding className="map-icon" />
-              <p>Interactive Map Would Be Embedded Here</p>
+          <div className="map-header">
+            <h2 className="section-title">FIND US</h2>
+            <p className="section-subtitle">Our office is located in Jeddah, Saudi Arabia, easily accessible and ready to welcome you.</p>
+          </div>
+          <div className="map-container-wrapper">
+            <div className="map-container">
+              {mapReady && <MapComponent />}
+              <div className="map-overlay">
+                <div className="map-overlay-title">
+                  <FaLocationArrow /> AL SOROUH GROUP
+                </div>
+                <div className="map-overlay-info">
+                  Jeddah, Kingdom of Saudi Arabia
+                </div>
+              </div>
+              <div className="map-disclaimer">
+                Hold Ctrl+Scroll to zoom the map
+              </div>
             </div>
           </div>
         </div>
@@ -182,27 +253,17 @@ function Contact() {
       {/* Office Locations */}
       <section className="office-locations">
         <div className="container">
-          <h2 className="section-title">Our Offices</h2>
+          <h2 className="section-title">OUR OFFICE</h2>
           <div className="offices-grid">
             <div className="office-card">
-              <h3>Dubai Headquarters</h3>
-              <p><FaMapMarkerAlt /> 123 Construction Avenue, Business District</p>
-              <p><FaPhone /> +971 4 123 4567</p>
-              <p><FaEnvelope /> dubai@alsorouhgroup.com</p>
-            </div>
-            
-            <div className="office-card">
-              <h3>Abu Dhabi Office</h3>
-              <p><FaMapMarkerAlt /> 456 Development Street, Central Area</p>
-              <p><FaPhone /> +971 2 765 4321</p>
-              <p><FaEnvelope /> abudhabi@alsorouhgroup.com</p>
-            </div>
-            
-            <div className="office-card">
-              <h3>Sharjah Office</h3>
-              <p><FaMapMarkerAlt /> 789 Building Road, Industrial Zone</p>
-              <p><FaPhone /> +971 6 987 6543</p>
-              <p><FaEnvelope /> sharjah@alsorouhgroup.com</p>
+              <div className="office-header">
+                <h3><FaCity /> Jeddah Office</h3>
+              </div>
+              <div className="office-body">
+                <p><FaMapMarkerAlt /> Jeddah, Kingdom of Saudi Arabia</p>
+                <p><FaPhone /> +966 56 890 4704</p>
+                <p><FaEnvelope /> zreaqy@gmail.com</p>
+              </div>
             </div>
           </div>
         </div>

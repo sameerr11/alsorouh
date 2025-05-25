@@ -42,14 +42,105 @@
   font-size: 18px;
 }
 
+/* Service Description Section */
+.service-description {
+  padding: 60px 0;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  position: relative;
+  overflow: hidden;
+  border-top: 3px solid var(--accent-color);
+  border-bottom: 3px solid var(--accent-color);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.service-description::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 150px;
+  height: 150px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+}
+
+.service-description::after {
+  content: '';
+  position: absolute;
+  bottom: -50px;
+  left: -50px;
+  width: 200px;
+  height: 200px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+}
+
+.description-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.accent-line {
+  height: 3px;
+  width: 150px;
+  background-color: var(--accent-color);
+  margin: 15px 0;
+  position: relative;
+}
+
+.accent-line::before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  top: -3.5px;
+}
+
+.accent-line.left::before {
+  left: 0;
+}
+
+.accent-line.right::before {
+  right: 0;
+}
+
+.description-content p {
+  font-size: 20px;
+  line-height: 1.8;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.description-content p strong {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
 /* Main Services Section */
 .main-services,
-.additional-services {
+.additional-services,
+.fire-services {
   padding: 90px 0;
 }
 
 .additional-services {
   background-color: var(--light-color);
+}
+
+.fire-services {
+  background-color: #f5f5f5;
 }
 
 .services-grid {
@@ -236,8 +327,17 @@
     height: 300px;
   }
   
+  .service-description {
+    padding: 50px 0;
+  }
+  
+  .description-content p {
+    font-size: 18px;
+  }
+  
   .main-services,
   .additional-services,
+  .fire-services,
   .process-section {
     padding: 70px 0;
   }
@@ -248,7 +348,7 @@
   }
   
   .cta-content h2 {
-    font-size: 30px;
+    font-size: 32px;
   }
 }
 
@@ -261,19 +361,28 @@
     font-size: 32px;
   }
   
+  .service-description {
+    padding: 40px 0;
+  }
+  
+  .description-content p {
+    font-size: 16px;
+  }
+  
   .main-services,
   .additional-services,
+  .fire-services,
   .process-section {
     padding: 60px 0;
   }
   
   .service-btn {
-    width: 100%;
-    padding: 10px 0;
+    padding: 8px 16px;
+    font-size: 13px;
   }
   
   .cta-content h2 {
-    font-size: 26px;
+    font-size: 28px;
   }
   
   .cta-content p {
@@ -281,9 +390,13 @@
   }
   
   .cta-content .cta-button {
-    width: 100%;
-    padding: 12px 0;
+    padding: 12px 30px;
     font-size: 16px;
+  }
+  
+  .accent-line {
+    width: 120px;
+    margin: 12px 0;
   }
 }
 
@@ -300,28 +413,45 @@
     font-size: 14px;
   }
   
+  .service-description {
+    padding: 35px 0;
+  }
+  
+  .description-content p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  
   .service-icon {
-    font-size: 32px;
+    font-size: 30px;
+    margin-bottom: 15px;
   }
   
   .service-card h3,
-  .process-step h3 {
+  .team-member h3,
+  .timeline-content h3 {
     font-size: 18px;
   }
   
   .main-services,
   .additional-services,
+  .fire-services,
   .process-section {
-    padding: 50px 0;
+    padding: 40px 0;
   }
   
   .cta-content h2 {
-    font-size: 22px;
+    font-size: 24px;
   }
   
   .step-number {
     width: 50px;
     height: 50px;
     font-size: 20px;
+  }
+  
+  .accent-line {
+    width: 80px;
+    margin: 10px 0;
   }
 } 

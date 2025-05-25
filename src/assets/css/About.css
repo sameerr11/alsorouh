@@ -258,6 +258,147 @@
   color: var(--gray-color);
 }
 
+/* Vision and Mission Sections */
+.vision-section,
+.mission-section {
+  padding: 90px 0;
+  position: relative;
+}
+
+.vision-section {
+  background-color: #212121;
+  color: var(--white-color);
+}
+
+.mission-section {
+  background-color: #2a3a3f;
+  color: var(--white-color);
+}
+
+.vision-content,
+.mission-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 60px;
+  font-size: 42px;
+  font-weight: 700;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.section-heading span:first-child {
+  color: var(--accent-color);
+}
+
+.vision-text {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.mission-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.mission-item {
+  position: relative;
+  padding-left: 30px;
+}
+
+.mission-number {
+  font-size: 64px;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 20px;
+  line-height: 1;
+}
+
+.mission-item-content {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.corner-accent {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: var(--accent-color);
+}
+
+.top-right {
+  top: 0;
+  right: 0;
+}
+
+.top-left {
+  top: 0;
+  left: 0;
+}
+
+.bottom-right {
+  bottom: 0;
+  right: 0;
+}
+
+.bottom-left {
+  bottom: 0;
+  left: 0;
+}
+
+/* Business Goals Section */
+.business-goals-section {
+  padding: 90px 0;
+  position: relative;
+  background-color: #2b3436;
+  color: var(--white-color);
+}
+
+.goals-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.goals-list {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.goal-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.goal-icon {
+  font-size: 22px;
+  color: var(--accent-color);
+  min-width: 24px;
+}
+
+.goal-item p {
+  font-size: 20px;
+  line-height: 1.5;
+  margin: 0;
+  font-weight: 400;
+}
+
 /* Responsive Styles */
 @media (max-width: 992px) {
   .about-header {
@@ -267,7 +408,10 @@
   .company-overview,
   .core-values,
   .leadership-team,
-  .milestones {
+  .milestones,
+  .business-goals-section,
+  .vision-section,
+  .mission-section {
     padding: 70px 0;
   }
   
@@ -296,6 +440,19 @@
   .timeline-item:nth-child(even) .timeline-content {
     left: 0;
   }
+  
+  .section-heading {
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+  
+  .mission-grid {
+    gap: 30px;
+  }
+  
+  .goal-item p {
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -310,7 +467,10 @@
   .company-overview,
   .core-values,
   .leadership-team,
-  .milestones {
+  .milestones,
+  .business-goals-section,
+  .vision-section,
+  .mission-section {
     padding: 60px 0;
   }
   
@@ -342,6 +502,29 @@
   .timeline-item {
     margin-bottom: 40px;
   }
+  
+  .section-heading {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+  
+  .mission-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .corner-accent {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .goal-item {
+    gap: 15px;
+  }
+  
+  .goal-item p {
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -356,8 +539,11 @@
   .company-overview,
   .core-values,
   .leadership-team,
-  .milestones {
-    padding: 50px 0;
+  .milestones,
+  .business-goals-section,
+  .vision-section,
+  .mission-section {
+    padding: 40px 0;
   }
   
   .company-overview h2 {
@@ -394,5 +580,36 @@
   
   .timeline-content {
     padding: 15px;
+  }
+  
+  .section-heading {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+  
+  .vision-text,
+  .mission-item-content {
+    font-size: 14px;
+  }
+  
+  .mission-number {
+    font-size: 48px;
+  }
+  
+  .corner-accent {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .goal-icon {
+    font-size: 18px;
+  }
+  
+  .goal-item p {
+    font-size: 15px;
+  }
+  
+  .goals-list {
+    gap: 20px;
   }
 } 
