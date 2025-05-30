@@ -54,9 +54,7 @@ function Navbar() {
         <div className="container">
           <div className="navbar-content">
             <Link to="/" className="logo">
-              {/* If you have a logo, uncomment below and comment out the text version */}
-              {/* <img src={logo} alt="Al Sorouh Group" height="40" /> */}
-              <span className="logo-text">AL SOROUH GROUP</span>
+              <img src={logo} alt="Al Sorouh Group" height="50" />
             </Link>
             
             <div className="mobile-toggle" onClick={toggleMobileMenu}>

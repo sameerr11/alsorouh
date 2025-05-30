@@ -361,122 +361,6 @@
   line-height: 1.6;
 }
 
-/* Testimonials Section */
-.testimonials-section {
-  padding: 120px 0;
-  background-color: var(--light-color);
-  position: relative;
-  overflow: hidden;
-}
-
-.testimonials-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23f0f0f0' fill-opacity='0.4' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
-  opacity: 0.4;
-}
-
-.testimonials-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  position: relative;
-  z-index: 2;
-}
-
-.testimonial-card {
-  background-color: var(--white-color);
-  padding: 40px 30px;
-  border-radius: 12px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-  position: relative;
-  height: 100%;
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  border-bottom: 4px solid transparent;
-  overflow: hidden;
-}
-
-.testimonial-card:hover {
-  transform: translateY(-15px);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
-}
-
-.testimonial-card::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background-color: var(--accent-color);
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
-  z-index: -1;
-}
-
-.testimonial-card:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
-}
-
-.testimonial-card::before {
-  content: '"';
-  position: absolute;
-  top: 20px;
-  left: 25px;
-  font-size: 100px;
-  color: var(--accent-color);
-  opacity: 0.15;
-  font-family: Georgia, serif;
-  line-height: 0.8;
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.testimonial-card:hover::before {
-  transform: translateY(-10px);
-  opacity: 0.2;
-}
-
-.testimonial-card p {
-  font-size: 16px;
-  font-style: italic;
-  margin-bottom: 25px;
-  position: relative;
-  z-index: 1;
-  line-height: 1.7;
-}
-
-.testimonial-card h4 {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--primary-color);
-  position: relative;
-  padding-top: 15px;
-}
-
-.testimonial-card h4::before {
-  content: '';
-  position: absolute;
-  width: 40px;
-  height: 2px;
-  background-color: var(--accent-color);
-  top: 0;
-  left: 0;
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.testimonial-card:hover h4::before {
-  width: 60px;
-}
-
 /* CTA Section */
 .cta-section {
   padding: 150px 0;
@@ -582,8 +466,7 @@
 /* Responsive Styles */
 @media (max-width: 1200px) {
   .features-container,
-  .projects-grid,
-  .testimonials-container {
+  .projects-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
   }
@@ -621,8 +504,7 @@
   }
   
   .features-section,
-  .projects-section,
-  .testimonials-section {
+  .projects-section {
     padding: 80px 0;
   }
   
@@ -660,15 +542,13 @@
   }
   
   .features-container,
-  .projects-grid,
-  .testimonials-container {
+  .projects-grid {
     grid-template-columns: 1fr;
     gap: 25px;
   }
   
   .features-section,
-  .projects-section,
-  .testimonials-section {
+  .projects-section {
     padding: 60px 0;
   }
   
@@ -729,14 +609,12 @@
   }
   
   .feature-box, 
-  .project-card,
-  .testimonial-card {
+  .project-card {
     transform: none !important;
   }
   
   .feature-box:hover,
-  .project-card:hover,
-  .testimonial-card:hover {
+  .project-card:hover {
     transform: translateY(-5px) !important;
   }
 }
@@ -765,14 +643,12 @@
     font-size: 14px;
   }
   
-  .feature-box,
-  .testimonial-card {
+  .feature-box {
     padding: 25px 20px;
   }
   
   .features-section,
-  .projects-section,
-  .testimonials-section {
+  .projects-section {
     padding: 50px 0;
   }
   
@@ -816,16 +692,8 @@
     padding: 0 20px 20px;
   }
   
-  .testimonial-card p {
-    font-size: 14px;
-  }
-  
-  .testimonial-card h4 {
-    font-size: 14px;
-  }
-  
   .feature-icon {
-    font-size: 35px;
+    font-size: 32px;
     margin-bottom: 15px;
   }
   

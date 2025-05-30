@@ -77,25 +77,6 @@ function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="testimonials-section">
-        <h2 className="section-title" data-aos="fade-up">What Our Clients Say</h2>
-        <div className="testimonials-container">
-          <div className="testimonial-card" data-aos="fade-up" data-aos-delay="100">
-            <p>"AL SOROUH GROUP delivered our project on time and exceeded our expectations in quality and service."</p>
-            <h4>- Ahmed Al-Farsi, Property Developer</h4>
-          </div>
-          <div className="testimonial-card" data-aos="fade-up" data-aos-delay="200">
-            <p>"Working with this team was a pleasure. Their attention to detail and professional approach made all the difference."</p>
-            <h4>- Sarah Johnson, Business Owner</h4>
-          </div>
-          <div className="testimonial-card" data-aos="fade-up" data-aos-delay="300">
-            <p>"Exceptional craftsmanship and reliability. I would recommend AL SOROUH GROUP for any construction project."</p>
-            <h4>- Mohammed Al-Qasimi, Real Estate Investor</h4>
-          </div>
-        </div>
-      </section>
-
       {/* Call to Action */}
       <section className="cta-section">
         <div className="cta-content" data-aos="zoom-in">
