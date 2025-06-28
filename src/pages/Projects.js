@@ -107,6 +107,34 @@ function Projects() {
     window.scrollTo(0, 0);
   };
 
+  // Add/remove body class based on selected project
+  useEffect(() => {
+    if (selectedProject) {
+      document.body.classList.add('hide-navbar-content');
+    } else {
+      document.body.classList.remove('hide-navbar-content');
+    }
+    
+    // Cleanup on unmount
+    return () => {
+      document.body.classList.remove('hide-navbar-content');
+    };
+  }, [selectedProject]);
+
+  // Listen for back button clicks from navbar
+  useEffect(() => {
+    const handleBackToProjects = () => {
+      setSelectedProject(null);
+      window.scrollTo(0, 0);
+    };
+
+    window.addEventListener('backToProjects', handleBackToProjects);
+    
+    return () => {
+      window.removeEventListener('backToProjects', handleBackToProjects);
+    };
+  }, []);
+
   // If a project is selected, show the project detail page
   if (selectedProject) {
     return (
@@ -115,9 +143,6 @@ function Projects() {
         <section className="project-detail-header" style={{backgroundImage: `url(${selectedProject.image})`}}>
           <div className="overlay"></div>
           <div className="header-content">
-            <button className="back-button" onClick={handleBackToProjects}>
-              <FaArrowLeft /> Back to Projects
-            </button>
             <h1>{selectedProject.name}</h1>
             <p>{selectedProject.category} • {selectedProject.location}</p>
           </div>
