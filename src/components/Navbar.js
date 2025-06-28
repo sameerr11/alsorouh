@@ -88,6 +88,14 @@ function Navbar() {
               </li>
               <li>
                 <Link 
+                  to="/projects" 
+                  className={location.pathname === '/projects' ? 'active' : ''}
+                >
+                  Projects
+                </Link>
+              </li>
+              <li>
+                <Link 
                   to="/contact" 
                   className={location.pathname === '/contact' ? 'active' : ''}
                 >
