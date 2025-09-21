@@ -133,7 +133,7 @@ function Contact() {
                     <FaEnvelope className="info-icon" />
                     <div className="info-text">
                       <h3>Email Us</h3>
-                      <p>zreaqy@gmail.com</p>
+                      <p>info@alsorouhgroup.net</p>
                     </div>
                   </div>
                   
@@ -251,7 +251,7 @@ function Contact() {
               <h3>Jeddah Office</h3>
               <p><FaMapMarkerAlt /> Jeddah, Kingdom of Saudi Arabia</p>
               <p><FaPhone /> +966 56 890 4704</p>
-              <p><FaEnvelope /> zreaqy@gmail.com</p>
+              <p><FaEnvelope /> info@alsorouhgroup.net</p>
             </div>
           </div>
         </div>

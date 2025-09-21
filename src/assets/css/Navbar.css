@@ -52,7 +52,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 60px;
+  height: 80px;
   position: relative;
   width: 100%;
 }
@@ -77,15 +77,28 @@ body {
   text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
 }
 
+.logo:hover img {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 193, 7, 0.3);
+  transform: translateY(-2px);
+}
+
 .logo img {
-  height: 50px;
+  height: 65px;
   transition: var(--transition);
   display: block;
   object-fit: contain;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .header.scrolled .logo img {
-  height: 45px;
+  height: 55px;
+  padding: 8px 12px;
 }
 
 /* Right side navigation container - MAJOR FIX */
@@ -239,7 +252,7 @@ body {
 }
 
 .header.scrolled .navbar-content {
-  height: 50px;
+  height: 70px;
 }
 
 /* Menu Overlay */
@@ -429,15 +442,17 @@ body {
   }
   
   .navbar-content {
-    height: 50px;
+    height: 70px;
   }
   
   .logo img {
-    height: 45px;
+    height: 55px;
+    padding: 8px 12px;
   }
   
   .header.scrolled .logo img {
-    height: 40px;
+    height: 50px;
+    padding: 7px 10px;
   }
   
   .mobile-toggle {
@@ -467,15 +482,17 @@ body {
   }
   
   .navbar-content {
-    height: 45px;
+    height: 65px;
   }
   
   .logo img {
-    height: 40px;
+    height: 50px;
+    padding: 7px 10px;
   }
   
   .header.scrolled .logo img {
-    height: 35px;
+    height: 45px;
+    padding: 6px 8px;
   }
   
   .mobile-toggle {
@@ -506,11 +523,13 @@ body {
   }
   
   .logo img {
-    height: 35px;
+    height: 45px;
+    padding: 6px 8px;
   }
   
   .header.scrolled .logo img {
-    height: 30px;
+    height: 40px;
+    padding: 5px 7px;
   }
   
   .mobile-toggle {
@@ -542,7 +561,8 @@ body {
   }
   
   .logo img {
-    height: 32px;
+    height: 42px;
+    padding: 5px 7px;
   }
   
   .mobile-toggle {

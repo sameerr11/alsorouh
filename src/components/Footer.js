@@ -64,7 +64,7 @@ function Footer() {
               </li>
               <li>
                 <FaEnvelope />
-                <span>zreaqy@gmail.com</span>
+                <span>info@alsorouhgroup.net</span>
               </li>
               <li>
                 <FaClock />
