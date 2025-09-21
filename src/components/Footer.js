@@ -14,7 +14,7 @@ function Footer() {
               We are a leading construction and engineering company dedicated to delivering high-quality projects with innovation and excellence.
             </p>
             <div className="social-links">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.facebook.com/people/Al-Sorouh-Group/61577063285696/?rdid=WjvrNnpXMXa3WvLE&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F17CVxNbmoc%2F" target="_blank" rel="noopener noreferrer">
                 <FaFacebookF />
               </a>
               <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
